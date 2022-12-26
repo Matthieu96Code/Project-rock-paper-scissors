@@ -58,6 +58,31 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "rock";
+function game() {
+
+    let score = 0;
+
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = "rock"
+        const computerSelection = getComputerChoice()
+        const play = playRound(playerSelection, computerSelection)
+        if (play.slice(0, 8) == "You win!") {
+            score++;
+        } else if (play.slice(0, 8) == "You lose") {
+            score--
+        }
+    }
+
+    if (score > 0) {
+        return "winner"
+    } else if (score < 0) {
+        return "loser"
+    } else {
+        return "The total game is tied"
+    }
+}
+
+/*const playerSelection = "rock";
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));*/
+console.log(game())
