@@ -63,9 +63,10 @@ function game() {
     let score = 0;
 
     for (let i = 0; i < 5; i++) {
-        const playerSelection = "rock"
+        const playerSelection = prompt("Play").toLowerCase()
         const computerSelection = getComputerChoice()
         const play = playRound(playerSelection, computerSelection)
+        alert(play)
         if (play.slice(0, 8) == "You win!") {
             score++;
         } else if (play.slice(0, 8) == "You lose") {
@@ -85,4 +86,5 @@ function game() {
 /*const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));*/
-console.log(game())
+/*console.log*/
+alert(game())
